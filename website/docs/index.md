@@ -7,12 +7,12 @@ hero:
   text: A kernel-based root solution for Android
   tagline: ""
   image:
-    src: /logo.png
+    src: /KernelSU/logo.png
     alt: KernelSU
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/what-is-kernelsu
+      link: /KernelSU/guide/what-is-kernelsu
     - theme: alt
       text: View on GitHub
       link: https://github.com/tiann/KernelSU
