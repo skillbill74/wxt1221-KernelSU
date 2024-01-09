@@ -7,7 +7,7 @@ export default defineConfig( {
     title: 'KernelSU',
     locales: locales.locales,
     sitemap: {
-        hostname: 'https://wxt1221.github.io/'
+        hostname: 'https://wxt1221.github.io/',
 	base: '/KernelSU'
     },
     buildEnd: async (config: SiteConfig) => {
