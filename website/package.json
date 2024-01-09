@@ -1,10 +1,10 @@
 {
   "name": "KernelSU_website",
   "version": "1.0.0",
-  "description": "KernelSU official website: https://kernelsu.org",
+  "description": "KernelSU official website: https://wxt1221.github.io/KernelSU/",
   "main": "index.js",
-  "repository": "https://kernelsu.org",
-  "author": "weishu",
+  "repository": "https://wxt1221.github.io/KernelSU/",
+  "author": "wxt1221",
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^1.0.0-rc.33",

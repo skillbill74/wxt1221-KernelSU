@@ -7,7 +7,7 @@ export default defineConfig( {
     title: 'KernelSU',
     locales: locales.locales,
     sitemap: {
-        hostname: 'https://kernelsu.org'
+        hostname: 'https://wxt1221.github.io/KernelSU/'
     },
     buildEnd: async (config: SiteConfig) => {
         const templateDir = resolve(config.outDir, 'templates');
