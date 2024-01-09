@@ -7,7 +7,7 @@ hero:
   text: A kernel-based root solution for Android
   tagline: ""
   image:
-    src: /KernelSU/logo.png
+    src: logo.png
     alt: KernelSU
   actions:
     - theme: brand
