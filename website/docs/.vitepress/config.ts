@@ -6,9 +6,10 @@ import { resolve } from 'path'
 export default defineConfig( {
     title: 'KernelSU',
     locales: locales.locales,
+    base: '/KernelSU/',
     sitemap: {
         hostname: 'https://wxt1221.github.io/',
-	base: '/KernelSU'
+	base: '/KernelSU/'
     },
     buildEnd: async (config: SiteConfig) => {
         const templateDir = resolve(config.outDir, 'templates');
