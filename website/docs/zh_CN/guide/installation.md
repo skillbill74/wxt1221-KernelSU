@@ -2,7 +2,7 @@
 
 ## 检查您的设备是否被支持 {#check-if-supported}
 
-从 [GitHub Releases](https://github.com/tiann/KernelSU/releases) 下载 KernelSU 管理器应用，然后将应用程序安装到设备并打开：
+从 [GitHub Releases](https://github.com/wxt1221/KernelSU/releases) 下载 KernelSU 管理器应用，然后将应用程序安装到设备并打开：
 
 - 如果应用程序显示 “不支持”，则表示您的设备不支持 KernelSU，你需要自己编译设备的内核才能使用，KernelSU 官方不会也永远不会为你提供一个可以刷写的 boot 镜像。
 - 如果应用程序显示 “未安装”，那么 KernelSU 支持您的设备；可以进行下一步操作。
@@ -72,7 +72,7 @@ KernelSU 的安装方法有如下几种，各自适用于不同的场景，请�
 
 KernelSU 为 GKI 设备提供了通用的 boot.img，您应该将 boot.img 刷写到设备的 boot 分区。
 
-您可以从 [GitHub Release](https://github.com/tiann/KernelSU/releases) 下载 boot.img, 请注意您应该使用正确版本的 boot.img。如果您不知道应该下载哪一个文件，请仔细阅读本文档中关于 [KMI](#kmi) 和 [安全补丁级别](#security-patch-level)的描述。
+您可以从 [GitHub Release](https://github.com/wxt1221/KernelSU/releases) 下载 boot.img, 请注意您应该使用正确版本的 boot.img。如果您不知道应该下载哪一个文件，请仔细阅读本文档中关于 [KMI](#kmi) 和 [安全补丁级别](#security-patch-level)的描述。
 
 通常情况下，同一个 KMI 和 安全补丁级别下会有三个不同格式的 boot 文件，它们除了内核压缩格式不同之外都一样。请检查您原有 boot.img 的内核压缩格式，您应该使用正确的格式，例如 `lz4`、`gz`；如果是用不正确的压缩格式，刷入 boot 后可能无法开机。
 
@@ -172,7 +172,7 @@ Magisk 官方的 `magiskboot` 可以在 Linux 设备上执行，如果你是 Lin
 
 步骤：
 
-1. 在 KernelSU 的 [Release 页面](https://github.com/tiann/KernelSU/releases) 下载与你手机版本匹配的以 AnyKernel3 开头的 zip 刷机包；如果你不知道下载哪一个，请仔细查阅上述文档中关于**KMI**和**安全补丁级别**的描述；下载错误的刷机包很可能导致无法开机，请注意备份。
+1. 在 KernelSU 的 [Release 页面](https://github.com/wxt1221/KernelSU/releases) 下载与你手机版本匹配的以 AnyKernel3 开头的 zip 刷机包；如果你不知道下载哪一个，请仔细查阅上述文档中关于**KMI**和**安全补丁级别**的描述；下载错误的刷机包很可能导致无法开机，请注意备份。
 2. 重启手机进入 TWRP。
 3. 使用 adb 将 AnyKernel3-*.zip 放到手机 /sdcard 然后在 TWRP 图形界面选择安装；或者你也可以直接 `adb sideload AnyKernel-*.zip` 安装。
 

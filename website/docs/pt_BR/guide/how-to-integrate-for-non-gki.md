@@ -18,7 +18,7 @@ O KernelSU usa kprobe para fazer ganchos de kernel, se o kprobe funcionar bem em
 Primeiro, adicione o KernelSU à árvore de origem do kernel:
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -
 ```
 
 Então, você deve verificar se o kprobe está ativado na configuração do seu kernel, se não estiver, adicione estas configurações a ele:
@@ -49,15 +49,15 @@ Primeiro, adicione o KernelSU à árvore de origem do kernel:
 ::: code-group
 
 ```sh[Tag mais recente (estável)]
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -
 ```
 
 ```sh[Branch principal (dev)]
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -s main
 ```
 
 ```sh[Selecionar tag (como v0.5.2)]
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.5.2
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -s v0.5.2
 ```
 
 :::

@@ -20,19 +20,19 @@ KernelSU 使用 kprobe 機制來處理核心的相關 hook，如果 *kprobe* 可
 - 最新 tag (稳定版本)
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -
 ```
 
 - main 分支(開發版本)
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -s main
 ```
 
 - 選取 tag (例如 v0.5.2)
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.5.2
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -s v0.5.2
 ```
 
 然後，您需要檢查您的核心是否啟用 *kprobe* 相關組態，如果未啟用，則需要新增以下組態：
@@ -61,7 +61,7 @@ CONFIG_KPROBE_EVENTS=y
 首先，將 KernelSU 新增至您的原始碼樹狀結構，再核心的根目錄執行以下命令：
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -
 ```
 
 然後，手動修改核心原始碼，您可以參閱下方的 patch：

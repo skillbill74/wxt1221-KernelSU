@@ -2,7 +2,7 @@
 
 ## Check if your device is supported
 
-Download KernelSU manager APP from [GitHub Releases](https://github.com/tiann/KernelSU/releases) and install it to your device:
+Download KernelSU manager APP from [GitHub Releases](https://github.com/wxt1221/KernelSU/releases) and install it to your device:
 
 - If the app shows `Unsupported`, it means **You should compile the kernel yourself**, KernelSU won't and never provide a boot image for you to flash.
 - If the app shows `Not installed`, then your devices is officially supported by KernelSU.
@@ -72,7 +72,7 @@ If your device's `boot.img` uses a commonly used compression format, you can use
 
 KernelSU provides a generic boot.img for GKI devices and you should flush the boot.img to the boot partition of the device.
 
-You can download boot.img from [GitHub Release](https://github.com/tiann/KernelSU/releases), please note that you should use the correct version of boot.img. If you don't know which file to download, please carefully read the description of [KMI](#kmi) and [Security Patch Level](#security-patch-level) in this document.
+You can download boot.img from [GitHub Release](https://github.com/wxt1221/KernelSU/releases), please note that you should use the correct version of boot.img. If you don't know which file to download, please carefully read the description of [KMI](#kmi) and [Security Patch Level](#security-patch-level) in this document.
 
 Normally, there are three boot files in different formats under the same KMI and security patch level. They are all the same except for the kernel compression format. Please check the kernel compression format of your original boot.img. You should use the correct format, such as `lz4`, `gz`; if you use an incorrect compression format, you may encounter bootloop after flashing boot.
 
@@ -171,7 +171,7 @@ Prerequisite: Your device must have a custom Recovery, such as TWRP; if not or o
 
 Step:
 
-1. From the [Release page](https://github.com/tiann/KernelSU/releases) of KernelSU, download the zip package starting with AnyKernel3 that matches your phone version; for example, the phone kernel version is `android12-5.10. 66`, then you should download the file `AnyKernel3-android12-5.10.66_yyyy-MM.zip` (where `yyyy` is the year and `MM` is the month).
+1. From the [Release page](https://github.com/wxt1221/KernelSU/releases) of KernelSU, download the zip package starting with AnyKernel3 that matches your phone version; for example, the phone kernel version is `android12-5.10. 66`, then you should download the file `AnyKernel3-android12-5.10.66_yyyy-MM.zip` (where `yyyy` is the year and `MM` is the month).
 2. Reboot the phone into TWRP.
 3. Use adb to put AnyKernel3-*.zip into the phone /sdcard and choose to install it in the TWRP GUI; or you can directly `adb sideload AnyKernel-*.zip` to install.
 

@@ -2,7 +2,7 @@
 
 ## Periksa apakah perangkat Anda didukung
 
-Unduh aplikasi manajer KernelSU dari [github releases](https://github.com/tiann/KernelSU/releases), lalu instal aplikasi ke perangkat dan buka aplikasi:
+Unduh aplikasi manajer KernelSU dari [github releases](https://github.com/wxt1221/KernelSU/releases), lalu instal aplikasi ke perangkat dan buka aplikasi:
 
 - Jika aplikasi menunjukkan `Unsupported`, itu berarti **Anda harus mengkompilasi kernel sendiri**, KernelSU tidak akan dan tidak pernah menyediakan boot image untuk Anda flash.
 - Jika aplikasi menunjukkan `Not installed`, maka perangkat Anda secara resmi didukung oleh KernelSU.
@@ -11,7 +11,7 @@ Unduh aplikasi manajer KernelSU dari [github releases](https://github.com/tiann/
 
 KernelSU menyediakan boot.img umum untuk perangkat GKI, Anda harus mem-flash boot.img ke partisi boot perangkat Anda.
 
-Anda dapat mengunduh boot.img dari [github actions for kernel] (https://github.com/tiann/KernelSU/actions/workflows/build-kernel.yml), perlu diketahui bahwa Anda harus menggunakan versi boot.img yang tepat. Sebagai contoh, jika perangkat Anda menunjukkan bahwa kernelnya adalah `5.10.101`, maka Anda harus mengunduh `5.10.101-xxxx.boot.xxx`.
+Anda dapat mengunduh boot.img dari [github actions for kernel] (https://github.com/wxt1221/KernelSU/actions/workflows/build-kernel.yml), perlu diketahui bahwa Anda harus menggunakan versi boot.img yang tepat. Sebagai contoh, jika perangkat Anda menunjukkan bahwa kernelnya adalah `5.10.101`, maka Anda harus mengunduh `5.10.101-xxxx.boot.xxx`.
 
 Dan juga, silakan periksa format boot.img Anda, Anda harus menggunakan format yang tepat, seperti `lz4`、`gz`.
 
