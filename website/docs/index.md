@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /KernelSU/guide/what-is-kernelsu
+      link: /guide/what-is-kernelsu
     - theme: alt
       text: View on GitHub
       link: https://github.com/wxt1221/KernelSU
