@@ -8,6 +8,8 @@ KernelSU 可以被集成到非 GKI 内核中，现在它最低支持到内核 4.
 
 如果你已经做好了上述准备，那有两个方法来集成 KernelSU 到你的内核之中。
 
+如果你遇到问题，请首先尝试非kprobe方法集成。
+
 1. 借助 `kprobe` 自动集成
 2. 手动修改内核源码
 
@@ -292,6 +294,14 @@ index 45306f9ef247..815091ebfca4 100755
 ```
 
 改完之后重新编译内核即可。
+
+对于低于5.10版本的内核，你需要修改 `fs/exec.c` 来支持模块卸载功能。
+
+参考这个commit [https://github.com/wxt1221/android_kernel_oneplus_sdm845/commit/70ace81f14c97cf7896eb09c1f5a3c02a5f012ea#diff-26b064824bfafef546f17235dc1f34dbea87ce6c27f9320b5d4427bfa4d2b0e9](https://github.com/wxt1221/android_kernel_oneplus_sdm845/commit/70ace81f14c97cf7896eb09c1f5a3c02a5f012ea#diff-26b064824bfafef546f17235dc1f34dbea87ce6c27f9320b5d4427bfa4d2b0e9)
+
+对于4.4及4.9内核，如果出现模块重启不可用但是SU可用，是SELinux的锅，参考这个commit。
+
+[https://github.com/sticpaper/android_kernel_xiaomi_msm8998-ksu/commit/646d0c836053ffa8743519c39fcabaecb258f00b](https://github.com/sticpaper/android_kernel_xiaomi_msm8998-ksu/commit/646d0c836053ffa8743519c39fcabaecb258f00b)
 
 :::info 莫名其妙进入安全模式？
 如果你采用手动集成的方式，并且没有禁用`CONFIG_KPROBES`，那么用户在开机之后按音量下，也可能触发安全模式！因此如果使用手动集成，你需要关闭 `CONFIG_KPROBES`！
