@@ -18,7 +18,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/tiann/KernelSU' }
+      { icon: 'github', link: 'https://github.com/wxt1221/KernelSU' }
     ],
 
     footer: {
@@ -27,7 +27,7 @@ export default defineConfig({
     },
 
     editLink: {
-        pattern: 'https://github.com/tiann/KernelSU/edit/main/website/docs/:path',
+        pattern: 'https://github.com/wxt1221/KernelSU/edit/main/website/docs/:path',
         text: '在 GitHub 中編輯本頁面'
     }
   }
@@ -36,7 +36,6 @@ export default defineConfig({
 function nav() {
   return [
     { text: '指南', link: '/zh_TW/guide/what-is-kernelsu' },
-    { text: 'Github', link: 'https://github.com/tiann/KernelSU' }
   ]
 }
 

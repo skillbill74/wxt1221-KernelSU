@@ -1,18 +1,19 @@
 {
   "name": "KernelSU_website",
   "version": "1.0.0",
-  "description": "KernelSU official website: https://kernelsu.org",
+  "description": "KernelSU official website: https://wxt1221.github.io/KernelSU/",
   "main": "index.js",
-  "repository": "https://kernelsu.org",
-  "author": "weishu",
+  "repository": "https://wxt1221.github.io/KernelSU/",
+  "author": "wxt1221",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.75",
-    "vue": "^3.2.45"
+    "vitepress": "^1.0.0-rc.33",
+    "vue": "^3.3.8"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
-  }
+  },
+  "type": "module"
 }

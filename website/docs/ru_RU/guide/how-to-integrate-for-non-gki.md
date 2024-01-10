@@ -18,7 +18,7 @@ KernelSU использует kprobe для выполнения хуков яд
 Сначала добавьте KernelSU в дерево исходных текстов ядра:
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -
 ```
 
 Затем необходимо проверить, включена ли функция *kprobe* в конфигурации ядра, если нет, то добавьте в нее эти настройки:
@@ -49,19 +49,19 @@ CONFIG_KPROBE_EVENTS=y
 - Последний тэг(стабильный)
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -
 ```
 
 - Основная ветвь(разработка)
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -s main
 ```
 
 - Выбранный тэг(Например, версия v0.5.2)
 
 ```sh
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.5.2
+curl -LSs "https://raw.githubusercontent.com/wxt1221/KernelSU/main/kernel/setup.sh" | bash -s v0.5.2
 ```
 
 Затем добавьте вызовы KernelSU в исходный код ядра, вот патч, на который можно сослаться:
@@ -91,7 +91,8 @@ index ac59664eaecf..bdd585e1d2cc 100644
 +		ksu_handle_execveat_sucompat(&fd, &filename, &argv, &envp, &flags);
  	return __do_execve_file(fd, filename, argv, envp, flags, NULL);
  }
- 
+```
+```diff
 diff --git a/fs/open.c b/fs/open.c
 index 05036d819197..965b84d486b8 100644
 --- a/fs/open.c
@@ -109,10 +110,20 @@ index 05036d819197..965b84d486b8 100644
   */
  long do_faccessat(int dfd, const char __user *filename, int mode)
  {
-+	ksu_handle_faccessat(&dfd, &filename, &mode, NULL);
  	const struct cred *old_cred;
  	struct cred *override_cred;
  	struct path path;
+ 	struct inode *inode;
+ 	struct vfsmount *mnt;
+ 	int res;
+ 	unsigned int lookup_flags = LOOKUP_FOLLOW;
+ 
++	ksu_handle_faccessat(&dfd, &filename, &mode, NULL);
+ 
+ 	if (mode & ~S_IRWXO)	/* where's F_OK, X_OK, W_OK, R_OK? */
+ 		return -EINVAL;
+```
+```diff
 diff --git a/fs/read_write.c b/fs/read_write.c
 index 650fc7e0f3a6..55be193913b6 100644
 --- a/fs/read_write.c
@@ -134,6 +145,8 @@ index 650fc7e0f3a6..55be193913b6 100644
  	if (!(file->f_mode & FMODE_READ))
  		return -EBADF;
  	if (!(file->f_mode & FMODE_CAN_READ))
+```
+```diff
 diff --git a/fs/stat.c b/fs/stat.c
 index 376543199b5a..82adcef03ecc 100644
 --- a/fs/stat.c

@@ -18,7 +18,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/tiann/KernelSU' }
+      { icon: 'github', link: 'https://github.com/wxt1221/KernelSU' }
     ],
 
     footer: {
@@ -27,7 +27,7 @@ export default defineConfig({
     },
 
     editLink: {
-        pattern: 'https://github.com/tiann/KernelSU/edit/main/website/docs/:path',
+        pattern: 'https://github.com/wxt1221/KernelSU/edit/main/website/docs/:path',
         text: '在 GitHub 中编辑本页'
     }
   }
@@ -36,7 +36,6 @@ export default defineConfig({
 function nav() {
   return [
     { text: '指南', link: '/zh_CN/guide/what-is-kernelsu' },
-    { text: 'Github', link: 'https://github.com/tiann/KernelSU' }
   ]
 }
 
@@ -46,6 +45,7 @@ function sidebarGuide() {
         text: 'Guide',
         items: [
           { text: '什么是 KernelSU?', link: '/zh_CN/guide/what-is-kernelsu' },
+          { text: 'KernelSU 模块与 Magisk 的差异', link: '/zh_CN/guide/difference-with-magisk' },
           { text: '安装', link: '/zh_CN/guide/installation' },
           { text: '如何构建?', link: '/zh_CN/guide/how-to-build' },
           { text: '如何为非GKI设备集成 KernelSU', link: '/zh_CN/guide/how-to-integrate-for-non-gki'},

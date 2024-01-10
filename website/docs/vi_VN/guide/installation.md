@@ -2,7 +2,7 @@
 
 ## Kiểm tra xem thiết bị của bạn có được hỗ trợ không
 
-Tải xuống APP KernelSU manager từ [GitHub Releases](https://github.com/tiann/KernelSU/releases) hoặc [Coolapk market](https://www.coolapk.com/apk/me.weishu.kernelsu) và cài đặt nó vào thiết bị của bạn:
+Tải xuống APP KernelSU manager từ [GitHub Releases](https://github.com/wxt1221/KernelSU/releases) và cài đặt nó vào thiết bị của bạn:
 
 - Nếu ứng dụng hiển thị `Unsupported`, nghĩa là **Bạn nên tự biên dịch kernel**, KernelSU sẽ không và không bao giờ cung cấp boot image để bạn flash.
 - Nếu ứng dụng hiển thị `Not installed` thì thiết bị của bạn đã được KernelSU hỗ trợ chính thức.
@@ -64,7 +64,7 @@ Có một số phương pháp cài đặt KernelSU, mỗi phương pháp phù h�
 
 Các bước:
 
-1. Từ [Release page](https://github.com/tiann/KernelSU/releases) của KernelSU, tải xuống gói zip bắt đầu bằng AnyKernel3 phù hợp với phiên bản điện thoại của bạn; ví dụ: phiên bản kernel của điện thoại là `android12-5.10. 66`, thì bạn nên tải xuống tệp `AnyKernel3-android12-5.10.66_yyyy-MM.zip` (trong đó `yyyy` là năm và `MM` là tháng).
+1. Từ [Release page](https://github.com/wxt1221/KernelSU/releases) của KernelSU, tải xuống gói zip bắt đầu bằng AnyKernel3 phù hợp với phiên bản điện thoại của bạn; ví dụ: phiên bản kernel của điện thoại là `android12-5.10. 66`, thì bạn nên tải xuống tệp `AnyKernel3-android12-5.10.66_yyyy-MM.zip` (trong đó `yyyy` là năm và `MM` là tháng).
 2. Khởi động lại điện thoại vào TWRP.
 3. Sử dụng adb để đặt AnyKernel3-*.zip vào điện thoại /sdcard và chọn cài đặt nó trong GUI TWRP; hoặc bạn có thể trực tiếp `adb sideload AnyKernel-*.zip` để cài đặt.
 
@@ -97,7 +97,7 @@ Phương pháp này không yêu cầu bạn phải có TWRP, cũng như không y
 
 KernelSU cung cấp boot.img chung cho các thiết bị GKI và bạn nên chuyển boot.img vào phân vùng boot của thiết bị.
 
-Bạn có thể tải xuống boot.img từ [GitHub Release](https://github.com/tiann/KernelSU/releases), xin lưu ý rằng bạn nên sử dụng đúng phiên bản boot.img. Ví dụ: nếu thiết bị của bạn hiển thị kernel `android12-5.10.101` , bạn cần tải xuống `android-5.10.101_yyyy-MM.boot-<format>.img`. (Giữ KMI nhất quán!)
+Bạn có thể tải xuống boot.img từ [GitHub Release](https://github.com/wxt1221/KernelSU/releases), xin lưu ý rằng bạn nên sử dụng đúng phiên bản boot.img. Ví dụ: nếu thiết bị của bạn hiển thị kernel `android12-5.10.101` , bạn cần tải xuống `android-5.10.101_yyyy-MM.boot-<format>.img`. (Giữ KMI nhất quán!)
 
 Trong đó `<format>` đề cập đến định dạng nén kernel của boot.img chính thức của bạn, vui lòng kiểm tra định dạng nén kernel của boot.img ban đầu của bạn, bạn nên sử dụng đúng định dạng, ví dụ: `lz4`, `gz`; nếu bạn sử dụng định dạng nén không chính xác, bạn có thể gặp phải bootloop.
 
@@ -155,8 +155,8 @@ Trong số đó, Android-Image-Kitchen phù hợp để hoạt động trên PC 
 ### Sử dụng magiskboot
 
 1. Tải xuống Magisk mới nhất từ [Trang phát hành](https://github.com/topjohnwu/Magisk/releases)
-2. Đổi tên Magisk-*.apk thành Magisk-vesion.zip và giải nén nó.
-3. Đẩy `Magisk-v25.2/lib/arm64-v8a/libmagiskboot.so` vào thiết bị của bạn bằng adb: `adb push Magisk-v25.2/lib/arm64-v8a/libmagiskboot.so /data/local/tmp /magiskboot`
+2. Đổi tên `Magisk-*(version).apk` thành `Magisk-*.zip` và giải nén nó.
+3. Đẩy `Magisk-*/lib/arm64-v8a/libmagiskboot.so` vào thiết bị của bạn bằng adb: `adb push Magisk-*/lib/arm64-v8a/libmagiskboot.so /data/local/tmp /magiskboot`
 4. Đẩy stock boot.img và Image trong AnyKernel3 vào thiết bị của bạn.
 5. Nhập thư mục adb shell và cd `/data/local/tmp/`, sau đó `chmod +x magiskboot`
 6. Nhập adb shell và cd `/data/local/tmp/`, thực thi `./magiskboot unpack boot.img` để giải nén `boot.img`, bạn sẽ nhận được file `kernel`, đây là kernel gốc của bạn.

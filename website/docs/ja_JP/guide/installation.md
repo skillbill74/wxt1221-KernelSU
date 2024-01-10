@@ -2,7 +2,7 @@
 
 ## デバイスが対応しているか確認する
 
-[GitHub Releases](https://github.com/tiann/KernelSU/releases) または [Coolapk market](https://www.coolapk.com/apk/me.weishu.kernelsu) から KernelSU Manager アプリをダウンロードし、お使いのデバイスにインストールしてください。
+[GitHub Releases](https://github.com/wxt1221/KernelSU/releases) から KernelSU Manager アプリをダウンロードし、お使いのデバイスにインストールしてください。
 
 - アプリが「非対応」と表示した場合は、**自分でカーネルをコンパイルする必要がある**という意味です。KernelSU は書き込むためのブートイメージを提供しません。
 - アプリが「未インストール」と表示した場合、お使いのデバイスは KernelSU に対応しています。
@@ -64,7 +64,7 @@ KernelSU のインストール方法はいくつかあり、それぞれ適し�
 
 手順:
 
-1. KernelSUの[リリースページ](https://github.com/tiann/KernelSU/releases)から、お使いのデバイスのバージョンにあった AnyKernel3 で始まる ZIP パッケージをダウンロードします。例えば、デバイスのカーネルのバージョンが`android12-5.10. 66`の場合、AnyKernel3-android12-5.10.66_yyyy-MM.zip`（yyyy`は年、`MM`は月）のファイルをダウンロードします。
+1. KernelSUの[リリースページ](https://github.com/wxt1221/KernelSU/releases)から、お使いのデバイスのバージョンにあった AnyKernel3 で始まる ZIP パッケージをダウンロードします。例えば、デバイスのカーネルのバージョンが`android12-5.10. 66`の場合、AnyKernel3-android12-5.10.66_yyyy-MM.zip`（yyyy`は年、`MM`は月）のファイルをダウンロードします。
 2. デバイスを TWRP へ再起動します。
 3. adb を使用して AnyKernel3-*.zip をデバイスの /sdcard に入れ、TWRP GUI でインストールを選択します。または直接`adb sideload AnyKernel-*.zip` でインストールできます。
 
@@ -95,7 +95,7 @@ KernelSU のインストール方法はいくつかあり、それぞれ適し�
 
 KernelSU では、GKI デバイス用の汎用 boot.img を提供しています。デバイスの boot パーティションに boot.img をフラッシュする必要があります。
 
-boot.img は、[GitHub Release](https://github.com/tiann/KernelSU/releases) からダウンロードできます。例えば、あなたのデバイスがカーネル `android12-5.10.101` の場合、`android-5.10.101_yyyy-MM.boot-<format>.img`をダウンロードする必要があります。（KMI を同じにしてください！）。
+boot.img は、[GitHub Release](https://github.com/wxt1221/KernelSU/releases) からダウンロードできます。例えば、あなたのデバイスがカーネル `android12-5.10.101` の場合、`android-5.10.101_yyyy-MM.boot-<format>.img`をダウンロードする必要があります。（KMI を同じにしてください！）。
 
 `<format>`は純正 boot.img のカーネル圧縮形式を指します。純正の boot.img のカーネル圧縮形式を確認してください。間違った圧縮形式を使うと、ブートループするかもしれません。
 
@@ -153,8 +153,8 @@ fastboot reboot
 ### magiskboot を使う
 
 1. 最新の Magisk を[リリースページ](https://github.com/topjohnwu/Magisk/releases)からダウンロードしてください。
-2. Magisk-*.apk を Magisk-vesion.zip に名前を変更して展開してください。
-3. `Magisk-v25.2/lib/arm64-v8a/libmagiskboot.so`を adb でデバイスに転送します：`adb push Magisk-v25.2/lib/arm64-v8a/libmagiskboot.so /data/local/tmp/magiskboot`
+2. `Magisk-*(version).apk` を `Magisk-*.zip` に名前を変更して展開してください。
+3. `Magisk-*/lib/arm64-v8a/libmagiskboot.so`を adb でデバイスに転送します：`adb push Magisk-*/lib/arm64-v8a/libmagiskboot.so /data/local/tmp/magiskboot`
 4. 純正 boot.img と AnyKernel3 の中の Image をデバイスに転送します。
 5. adb shell に入り、`cd /data/local/tmp/` し、`chmod +x magiskboot` を実行します。
 6. adb shell に入り、`cd /data/local/tmp/` し、`./magiskboot unpack boot.img` を実行して `boot.img` を抽出します。`kernel` ファイルが純正カーネルです。

@@ -25,17 +25,22 @@ ccflags-y += -DKSU_VERSION=16
 endif
 
 ifndef KSU_EXPECTED_SIZE
-KSU_EXPECTED_SIZE := 0x033b
+KSU_EXPECTED_SIZE := 0x02e8
 endif
 
 ifndef KSU_EXPECTED_HASH
-KSU_EXPECTED_HASH := 0xb0b91415
+KSU_EXPECTED_HASH := 4f395ca83dbc9092c85d24219acbe2b6298761e035e1375b316993bd5a1badbd
+endif
+
+ifdef KSU_MANAGER_PACKAGE
+ccflags-y += -DKSU_MANAGER_PACKAGE=\"$(KSU_MANAGER_PACKAGE)\"
+$(info -- KernelSU Manager package name: $(KSU_MANAGER_PACKAGE))
 endif
 
 $(info -- KernelSU Manager signature size: $(KSU_EXPECTED_SIZE))
 $(info -- KernelSU Manager signature hash: $(KSU_EXPECTED_HASH))
 
 ccflags-y += -DEXPECTED_SIZE=$(KSU_EXPECTED_SIZE)
-ccflags-y += -DEXPECTED_HASH=$(KSU_EXPECTED_HASH)
+ccflags-y += -DEXPECTED_HASH=\"$(KSU_EXPECTED_HASH)\"
 ccflags-y += -Wno-implicit-function-declaration -Wno-strict-prototypes -Wno-int-conversion -Wno-gcc-compat
 ccflags-y += -Wno-declaration-after-statement

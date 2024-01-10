@@ -2,7 +2,7 @@
 
 ## 檢查您的裝置是否受支援 {#check-if-supported}
 
-從 [GitHub Releases](https://github.com/tiann/KernelSU/releases) 或 [酷安](https://www.coolapk.com/apk/me.weishu.kernelsu) 下載 KernelSU 管理員應用程式，然後將應用程式安裝至裝置並開啟：
+從 [GitHub Releases](https://github.com/wxt1221/KernelSU/releases) 下載 KernelSU 管理員應用程式，然後將應用程式安裝至裝置並開啟：
 
 - 如果應用程式顯示「不支援」，則表示您的裝置不支援 KernelSU，您需要自行編譯核心才能繼續使用，，KernelSU 官方也永遠不會為您提供一個可以刷新的 Boot 映像。
 - 如果應用程式顯示「未安裝」，那麼 KernelSU 支援您的裝置；可以進行下一步作業。
@@ -64,7 +64,7 @@ KernelSU 的安裝方法有以下幾種，各自適用於不同的場景，請�
 
 步驟：
 
-1. 在 KernelSU 的 [Release 頁面](https://github.com/tiann/KernelSU/releases) 下載與您手機版本相符的以 AnyKernel3 開頭的 Zip 套件；例如，手機核心版本為 `android12-5.10.66`，那麼您應該下載 `AnyKernel3-android12-5.10.66_yyyy-MM.zip` 這個檔案 (其中 `yyyy` 為年份，`MM` 為月份)。
+1. 在 KernelSU 的 [Release 頁面](https://github.com/wxt1221/KernelSU/releases) 下載與您手機版本相符的以 AnyKernel3 開頭的 Zip 套件；例如，手機核心版本為 `android12-5.10.66`，那麼您應該下載 `AnyKernel3-android12-5.10.66_yyyy-MM.zip` 這個檔案 (其中 `yyyy` 為年份，`MM` 為月份)。
 2. 重新開機手機至 TWRP。
 3. 使用 Adb 將 AnyKernel3-*.zip 放置到手機 /sdcard 然後在 TWRP 圖形使用者介面選擇並安裝；或者您也可以直接 `adb sideload AnyKernel-*.zip` 安裝。
 
@@ -95,7 +95,7 @@ PS. 這種方法在更新 KernelSU 時比較方便，無需電腦即可完成 (�
 
 KernelSU 為 GKI 裝置提供了標準 boot.img，您需要將 boot.img 刷新至裝置的 Boot 分割區。
 
-您可以從 [GitHub Release](https://github.com/tiann/KernelSU/releases) 下載 boot.img，請注意，您應該使用正確版本的 boot.img。例如，如果您的裝置顯示核心是 `android12-5.10.101`，需要下載 `android-5.10.101_yyyy-MM.boot-<format>.img`.
+您可以從 [GitHub Release](https://github.com/wxt1221/KernelSU/releases) 下載 boot.img，請注意，您應該使用正確版本的 boot.img。例如，如果您的裝置顯示核心是 `android12-5.10.101`，需要下載 `android-5.10.101_yyyy-MM.boot-<format>.img`.
 
 其中 `<format>` 指的是您的官方 boot.img 的核心壓縮格式，請檢查您原有 boot.img 的核心壓縮格式，您應該使用正確的格式，例如 `lz4`、`gz`；如果使用不正確的壓縮格式，刷新 Boot 後可能無法開機。
 
@@ -153,8 +153,8 @@ fastboot reboot
 ### 使用 magiskboot {#using magiskboot}
 
 1. 在 Magisk 的 [Release 頁面](https://github.com/topjohnwu/Magisk/releases) 下載最新的 Magisk 安裝套件。
-2. 將 Magisk-*.apk 重新命名為 Magisk-vesion.zip 然後解壓縮。
-3. 將解壓縮後的 `Magisk-v25.2/lib/arm64-v8a/libmagiskboot.so` 檔案，使用 Adb 推入至手機：`adb push Magisk-v25.2/lib/arm64-v8a/libmagiskboot.so /data/local/tmp/magiskboot`
+2. 將 `Magisk-*(version).apk` 重新命名為 `Magisk-*.zip` 然後解壓縮。
+3. 將解壓縮後的 `Magisk-*/lib/arm64-v8a/libmagiskboot.so` 檔案，使用 Adb 推入至手機：`adb push Magisk-*/lib/arm64-v8a/libmagiskboot.so /data/local/tmp/magiskboot`
 4. 使用 Adb 將原廠 boot.img 和 AnyKernel3 中的 Image 推入至手機。
 5. adb shell 進入 /data/local/tmp/ 目錄，然後賦予先前推入檔案的可執行權限 `chmod +x magiskboot`
 6. adb shell 進入 /data/local/tmp/ 目錄，執行 `./magiskboot unpack boot.img` 此時會將 `boot.img` 解除封裝，得到一個名為 `kernel` 的檔案，這個檔案是您的原廠核心。

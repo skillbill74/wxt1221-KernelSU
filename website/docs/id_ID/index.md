@@ -15,7 +15,7 @@ hero:
       link: /id_ID/guide/what-is-kernelsu
     - theme: alt
       text: Lihat di GitHub
-      link: https://github.com/tiann/KernelSU
+      link: https://github.com/wxt1221/KernelSU
 
 features:
   - title: Kernel-based

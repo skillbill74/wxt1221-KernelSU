@@ -12,7 +12,7 @@ body:
     attributes:
       label: Repository URL
       description: Your repository URL
-      placeholder: https://github.com/tiann/KernelSU
+      placeholder: https://github.com/wxt1221/KernelSU
     validations:
       required: true
   - type: input

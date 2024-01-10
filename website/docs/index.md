@@ -7,7 +7,7 @@ hero:
   text: A kernel-based root solution for Android
   tagline: ""
   image:
-    src: /logo.png
+    src: logo.png
     alt: KernelSU
   actions:
     - theme: brand
@@ -15,15 +15,15 @@ hero:
       link: /guide/what-is-kernelsu
     - theme: alt
       text: View on GitHub
-      link: https://github.com/tiann/KernelSU
+      link: https://github.com/wxt1221/KernelSU
 
 features:
   - title: Kernel-based
-    details: KernelSU is working in Linux kernel mode, it has more control over userspace applications.
-  - title: Whitelist access control
-    details: Only App that is granted root permission can access `su`, other apps cannot perceive su.
-  - title: Restricted root permission
-    details: KernelSU allows you to customize the uid, gid, groups, capabilities and SELinux rules of su. Lock up the root power in a cage.
-  - title: Module & Open source
-    details: KernelSU supports modify /system systemlessly by overlayfs and it is open-sourced under GPL-3.
+    details: As the name suggests, KernelSU works under the Linux kernel giving it more control over userspace applications.
+  - title: Root Access Control
+    details: Only permitted apps may access or see `su`, all other apps are not aware of this.
+  - title: Customizable Root Privileges
+    details: KernelSU allows customization of `su`'s uid, gid, groups, capabilities, and SELinux rules, locking up root privileges.
+  - title: Modules
+    details: Modules may modify /system systemlessly using overlayfs enabling great power.
 
