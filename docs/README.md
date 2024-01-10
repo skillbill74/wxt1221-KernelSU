@@ -1,4 +1,4 @@
-<b>Hello everyone, my name is wxt1221,weishu and I have put the KernelSU project into Public Archive. I will continue to maintain KSU and we will not reconstruct KSU.
+<b>Hello everyone, weishu has put the KernelSU project into Public Archive. I will continue to maintain KSU and we will not reconstruct KSU.
 
 New features of KSU such as kmod, ksufs, etc. will be delayed for a period of time for maintenance, and we will prioritize handling current bugs.
 
