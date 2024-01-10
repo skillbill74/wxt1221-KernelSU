@@ -18,6 +18,7 @@
 #include "linux/fs.h"
 #include "linux/namei.h"
 #include "linux/rcupdate.h"
+#include "../../fs/mount.h"
 
 #include "allowlist.h"
 #include "arch.h"
