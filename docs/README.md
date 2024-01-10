@@ -1,10 +1,10 @@
-各位好，我是 wxt1221,weishu 已经将 KernelSU 项目 Public Archive ，我会继续进行KSU维护，我们不会重构KSU。
+<b>Hello everyone, my name is wxt1221,weishu and I have put the KernelSU project into Public Archive. I will continue to maintain KSU and we will not reconstruct KSU.
 
-KSU的新功能诸如kmod,ksufs等将会延后一段时间进行维护，我们会优先处理好当前的bug。
+New features of KSU such as kmod, ksufs, etc. will be delayed for a period of time for maintenance, and we will prioritize handling current bugs.
 
-另外我们需要Android Apps开发人员进行Manager维护。
+In addition, we need Android Apps developers to perform Manager maintenance.
 
-欢迎各位加入！
+Everyone is welcome to join!</b>
 
 
 **English** | [Español](README_ES.md) | [简体中文](README_CN.md) | [繁體中文](README_TW.md) | [日本語](README_JP.md) | [Polski](README_PL.md) | [Portuguese-Brazil](README_PT-BR.md) | [Türkçe](README_TR.md) | [Русский](README_RU.md) | [Tiếng Việt](README_VI.md) | [Indonesia](README_ID.md) | [עברית](README_iw.md) | [हिंदी](README_IN.md)
