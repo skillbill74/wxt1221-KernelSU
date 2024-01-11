@@ -25,7 +25,7 @@ ccflags-y += -DKSU_VERSION=16
 endif
 
 ifndef KSU_EXPECTED_SIZE
-KSU_EXPECTED_SIZE := 0x02e8
+KSU_EXPECTED_SIZE := 0x0452
 endif
 
 ifndef KSU_EXPECTED_HASH
